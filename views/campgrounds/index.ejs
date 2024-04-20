@@ -1,0 +1,54 @@
+<!-- Include Header  -->
+<%- include ('../includes/header.ejs') %>
+
+<style>
+    .jumbotron {
+        background-image: url('https://images.unsplash.com/photo-1536257104079-aa99c6460a5a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 100px 0; /* Adjust padding as needed */
+        text-align: center;
+    }
+</style>
+
+<div class="container-fluid">
+
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome to Adventure-Venture!</h1>
+            <p>View our handpicked campgrounds from all over the world...</p>
+            <div class="row justify-content-center">
+                <div class="col-md-2 col-sm-6">
+                    <a href="/campgrounds/new">
+                        <button class="btn btn-light">Add a new campground</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row text-center">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="col-md-4 col-sm-6 mb-3 rounded-xl" style="box-sizing: border-box;"> 
+                <div class="card bg-dark  text-light ">
+                    <div class="card-header">
+                        <h3><%= campground.name %></h3>
+                    </div>
+                    <div class="card-body">
+                        <img src="<%= campground.image %>" class="img-fluid w-40" > <!-- Use img-fluid class for responsive images -->
+                    </div>
+                    <div class="card-footer bg-secondary">
+                        <a href="/campgrounds/<%= campground._id %>" class="btn btn-light text-black">
+                            More Info
+                        </a>
+                    </div>
+                </div>                
+            </div>
+        <% }); %>
+    </div>
+
+</div><br>
+
+<!-- Include Footer  -->
+<%- include ('../includes/footer.ejs') %>

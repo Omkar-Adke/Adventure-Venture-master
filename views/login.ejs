@@ -1,0 +1,49 @@
+<%- include ('includes/header') %>
+
+<body  style=" background-image: url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');background-size: cover;">
+
+    <div  class="card" style="margin-left: 35%;margin-right: 35%; justify-content: center; align-items: center; margin-top:10vw; border-radius: 3%;background-color: white; ">
+        
+        
+        <div  class="container">
+            <h1 style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;margin-top: 5%;">Login</h1>
+            <div class="row">
+                <div class="col-lg-6 col-md-12" style="width: 100%; margin: 30px auto;">
+                    <form action="/login" method="POST">
+                        <div class="form-group">
+                            Name:
+                            <div class="input-group">
+                                <div class="input-group-prepend" >
+                                    <span class="input-group-text">
+                                        <span class="fa fa-user"></span>
+                                    </span>                    
+                                </div>
+                            <input type="text" class="form-control" name="username" placeholder="Name" required="required">				
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        Password:
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-lock"></i>
+                                </span>                    
+                            </div>
+                            <input type="password" class="form-control" name="password" placeholder="Password" required="required">				
+                        </div>
+                    </div><br>           
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+                    </div>
+                </form>
+                <p>Don't have a account? Click here to <a href="/register">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+<%- include ('includes/footer') %>
