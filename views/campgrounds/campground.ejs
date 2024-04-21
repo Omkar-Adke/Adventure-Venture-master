@@ -1,7 +1,7 @@
 <!-- Include Header  -->
 <%- include ('../includes/header.ejs') %>
 
-<div class="container-fluid " >
+<div class="container-fluid">
     
     <div class="row">
         <div class="col-md-5">
@@ -19,7 +19,9 @@
                     <div class="card-body">
                         <h4 class="float-right">₹ <%= campground.price %>/person.</h4>
                         <h2><p class="font-italic text-primary"><%= campground.name%></p></h2>
+                        <p><%= campground.contact%></p>
                         <p><%= campground.description %></p>
+                        <p>Contact: <%= campground.contact %></p> <!-- Add this line to display contact -->
                         <div>
                             <b>Submitted by <i><%= campground.author.username %></i>, <%= moment(campground.createdAt).fromNow() %></b>
                             <div class="float-right">
