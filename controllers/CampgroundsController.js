@@ -20,6 +20,7 @@ module.exports.addnew = async (req,res)=>{
         name: req.body.name,
         price: req.body.price,
         image: req.body.image,
+        contact:req.body.contact,
         description: req.body.desc,
         author: author 
     })
@@ -65,6 +66,7 @@ module.exports.updatecampground = async (req,res)=>{
         foundcampground.name        = req.body.campground.name;
         foundcampground.price       = req.body.campground.price;
         foundcampground.image       = req.body.campground.image;
+        foundcampground.contact     = req.body.campground.contact
         foundcampground.description = req.body.campground.description;
         try{
             const updated = await foundcampground.save();

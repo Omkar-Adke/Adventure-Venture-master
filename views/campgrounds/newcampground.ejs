@@ -1,39 +1,55 @@
 <%- include('../includes/header')%>
 <body style="background-image: url('https://images.pexels.com/photos/19138516/pexels-photo-19138516/free-photo-of-lake-and-mountains.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover;">
     <div class="container" style="margin: 70px auto;">
-        
-        
         <div class="card" style="padding: 5%;border-radius: 1%;">
             <h1 style="text-align: center;">Add New Campground</h1>
             <div class="row">
                 <div class="col-lg-6 col-md-12" style="margin: auto; ">
-                <form action="/campgrounds" method="POST">
-                    <div class="form-group">
-                        Name: 
-                        <input class="form-control" type="text" name="name" placeholder="Name">
-                    </div>
-                    <div class="form-group">
-                        Price: 
-                        <input class="form-control" type="number" name="price" placeholder="Price per night" min="0.01" step="0.01">
-                    </div>
-                    <div class="form-group">
-                        Image Url: 
-                        <input class="form-control" type="text" name="image" placeholder="Image url">
-                    </div>
-                    <div class="form-group">
-                        Description: 
-                        <textarea class="form-control" type="text" name="desc" placeholder="Description" rows="4"></textarea>
-                    </div>                
-                    <div class="form-group">
-                        <button class="btn btn-primary btn-block btn-lg" type="submit">Add New</button>
-                    </div>
-                </form>
-                <a href="/campgrounds"><button class="btn btn-primary">Go Back</button></a>
+                    <form action="/campgrounds" method="POST" onsubmit="return validateForm()">
+                        <div class="form-group">
+                            Name: 
+                            <input class="form-control" type="text" name="name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            Price: 
+                            <input class="form-control" type="number" name="price" placeholder="Price per night" min="0.01" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            Contact: 
+                            <input class="form-control" type="number" name="contact" placeholder="Contact">
+                        </div>
+                        <div class="form-group">
+                            Image Url: 
+                            <input class="form-control" type="text" name="image" placeholder="Image url">
+                        </div>
+                        <div class="form-group">
+                            Description: 
+                            <textarea class="form-control" id="description" name="desc" placeholder="Description" rows="4"></textarea>
+                            <small id="descriptionError" class="form-text text-danger" style="display: none;">Description is required.</small>
+                        </div>                
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-block btn-lg" type="submit">Add New</button>
+                        </div>
+                    </form>
+                    <a href="/campgrounds"><button class="btn btn-primary">Go Back</button></a>
+                </div>
             </div>
         </div>
     </div>
-    
-</div>
-
 </body>
 <%- include('../includes/footer')%>
+
+<script>
+    function validateForm() {
+        const description = document.getElementById('description').value;
+        const descriptionError = document.getElementById('descriptionError');
+
+        if (!description.trim()) {
+            descriptionError.style.display = 'block';
+            return false;
+        } else {
+            descriptionError.style.display = 'none';
+            return true;
+        }
+    }
+</script>
