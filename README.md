@@ -37,7 +37,3 @@ Once you have Node.js and MongoDB installed on your computer,
 - [EJS](https://ejs.co/) - Embedded JavaScript templating
 - [Passport](http://www.passportjs.org/) - Simple, unobtrusive authentication for Node.js
 - [Bootstrap 4](https://getbootstrap.com/) - The most popular front-end framework for developing responsive, mobile-first websites.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
